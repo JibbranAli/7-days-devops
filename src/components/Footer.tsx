@@ -7,7 +7,9 @@ import {
   Phone, 
   MapPin,
   Heart,
-  ExternalLink
+  ExternalLink,
+  Instagram,
+  Youtube
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -24,16 +26,23 @@ export const Footer: React.FC = () => {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      href: 'https://linkedin.com/in/vimaldaga',
+      href: 'https://www.linkedin.com/company/linuxworld-informatics-pvt-ltd/',
       color: 'hover:text-blue-600',
       bgColor: 'hover:bg-blue-50 dark:hover:bg-blue-900/20'
     },
     {
-      name: 'Twitter',
-      icon: Twitter,
-      href: 'https://twitter.com/vimaldaga',
-      color: 'hover:text-sky-500',
-      bgColor: 'hover:bg-sky-50 dark:hover:bg-sky-900/20'
+      name: 'Instagram',
+      icon: Instagram,
+      href: 'https://www.instagram.com/linuxworld.india/',
+      color: 'hover:text-pink-500',
+      bgColor: 'hover:bg-pink-50 dark:hover:bg-pink-900/20'
+    },
+    {
+      name: 'YouTube',
+      icon: Youtube,
+      href: 'https://www.youtube.com/@linuxworldindia',
+      color: 'hover:text-red-500',
+      bgColor: 'hover:bg-red-50 dark:hover:bg-red-900/20'
     }
   ];
 
@@ -52,13 +61,17 @@ export const Footer: React.FC = () => {
   };
 
   const shareOnSocial = (platform: string) => {
+    // Check if window is available (for SSR compatibility)
+    if (typeof window === 'undefined') return;
+    
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent('Join me in this amazing FREE 7-Day DevOps Training by Mr. Vimal Daga!');
     
     const shareUrls = {
       whatsapp: `https://wa.me/?text=${text}%20${url}`,
       linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
-      twitter: `https://twitter.com/intent/tweet?text=${text}&url=${url}`
+      instagram: `https://www.instagram.com/linuxworld.india/`,
+      youtube: `https://www.youtube.com/@linuxworldindia`
     };
     
     const shareUrl = shareUrls[platform as keyof typeof shareUrls];

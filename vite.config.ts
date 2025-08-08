@@ -19,11 +19,16 @@ export default defineConfig({
         }
       }
     },
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 1000,
+    sourcemap: false
   },
   server: {
     host: true,
     port: 5173,
     headers: {}
+  },
+  preview: {
+    port: 4173,
+    host: true
   }
 });

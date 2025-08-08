@@ -19,6 +19,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
+    // Check if window is available (for SSR compatibility)
+    if (typeof window === 'undefined') return;
+    
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setIsDark(savedTheme === 'dark');
@@ -26,6 +29,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }, []);
 
   useEffect(() => {
+    // Check if window is available (for SSR compatibility)
+    if (typeof window === 'undefined') return;
+    
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     if (isDark) {
       document.documentElement.classList.add('dark');

@@ -22,7 +22,10 @@ function AppContent() {
   const { isRegistrationModalOpen, closeRegistrationModal } = useModal();
 
   useEffect(() => {
-    setMounted(true);
+    // Check if window is available (for SSR compatibility)
+    if (typeof window !== 'undefined') {
+      setMounted(true);
+    }
   }, []);
 
   if (!mounted) {

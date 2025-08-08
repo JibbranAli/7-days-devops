@@ -40,6 +40,7 @@ interface FormErrors {
   profession?: string;
   yearsOfExperience?: string;
   currentRole?: string;
+  submit?: string; // Added for overall form submission error
 }
 
 interface RegistrationFormProps {
@@ -48,7 +49,10 @@ interface RegistrationFormProps {
 }
 
 export const RegistrationForm: React.FC<RegistrationFormProps> = ({ isOpen, onClose }) => {
-  const [formData, setFormData] = useState<FormData>({
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const initialFormData = {
     fullName: '',
     collegeCompany: '',
     contactNumber: '',
@@ -61,12 +65,12 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ isOpen, onCl
     currentRole: '',
     expectations: '',
     additionalInfo: ''
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
   
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [touched, setTouched] = useState<Record<string, boolean>>({});
 
   const validateField = (name: string, value: string): string | undefined => {
     switch (name) {
@@ -200,53 +204,30 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ isOpen, onCl
       // Since we're using no-cors, we can't check the response status
       // But we can assume success if no error was thrown
       setIsSubmitted(true);
-      setFormData({
-        fullName: '',
-        collegeCompany: '',
-        contactNumber: '',
-        emailId: '',
-        currentCity: '',
-        sourceOfInformation: '',
-        reference: '',
-        profession: '',
-        yearsOfExperience: '',
-        currentRole: '',
-        expectations: '',
-        additionalInfo: ''
-      });
+      setFormData(initialFormData);
       setErrors({});
       setTouched({});
       
     } catch (error) {
-      console.error('Submission error:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-      alert('There was an error submitting your registration. Please try again. Error: ' + errorMessage);
+      console.error('Error submitting form:', error);
+      setErrors({ submit: 'Failed to submit form. Please try again.' });
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleClose = () => {
-    if (!isSubmitting) {
-      onClose();
-      if (!isSubmitted) {
-        setFormData({
-          fullName: '',
-          collegeCompany: '',
-          contactNumber: '',
-          emailId: '',
-          currentCity: '',
-          sourceOfInformation: '',
-          reference: '',
-          profession: '',
-          yearsOfExperience: '',
-          currentRole: '',
-          expectations: '',
-          additionalInfo: ''
-        });
-        setErrors({});
-        setTouched({});
-      }
+    onClose();
+    if (!isSubmitted) {
+      setFormData(initialFormData);
+      setErrors({});
+      setTouched({});
+    } else {
+      // Reset everything if form was successfully submitted
+      setFormData(initialFormData);
+      setErrors({});
+      setTouched({});
+      setIsSubmitted(false);
     }
   };
 
@@ -701,29 +682,28 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ isOpen, onCl
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className={`w-full py-4 px-6 rounded-xl text-white font-bold text-lg transition-all duration-200 ${
-              isSubmitting
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 transform hover:scale-[1.02] shadow-lg hover:shadow-xl'
-            }`}
-          >
-            {isSubmitting ? (
-              <div className="flex items-center justify-center">
-                <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
-                Processing Registration...
-              </div>
-            ) : (
-              <div className="flex items-center justify-center">
-                <span className="mr-2">🎁</span>
-                <Send className="w-5 h-5 mr-2" />
-                Register for FREE Training
-                <span className="ml-2">🎁</span>
+          <div className="flex flex-col space-y-4">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-700 transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            >
+              {isSubmitting ? (
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <span>Submitting...</span>
+                </div>
+              ) : (
+                'Register Now - It\'s FREE!'
+              )}
+            </button>
+            
+            {errors.submit && (
+              <div className="text-red-500 text-sm text-center bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
+                {errors.submit}
               </div>
             )}
-          </button>
+          </div>
 
           {/* Additional Info */}
           <div className="text-center text-sm text-gray-500 dark:text-gray-400">

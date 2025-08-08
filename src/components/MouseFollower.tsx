@@ -9,6 +9,9 @@ export const MouseFollower: React.FC = () => {
   const [currentIcon, setCurrentIcon] = useState(0);
 
   useEffect(() => {
+    // Check if document is available (for SSR compatibility)
+    if (typeof document === 'undefined') return;
+
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
       if (!isVisible) setIsVisible(true);

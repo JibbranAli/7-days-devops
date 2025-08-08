@@ -5,6 +5,9 @@ export const ScrollToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Check if window is available (for SSR compatibility)
+    if (typeof window === 'undefined') return;
+
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
         setIsVisible(true);
@@ -19,6 +22,8 @@ export const ScrollToTop: React.FC = () => {
   }, []);
 
   const scrollToTop = () => {
+    if (typeof window === 'undefined') return;
+    
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
