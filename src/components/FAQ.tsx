@@ -9,7 +9,7 @@ const faqData = [
   },
   {
     question: 'What if I miss a session?',
-    answer: 'Don\'t worry! All sessions are recorded and will be available for replay. You\'ll also get access to our community WhatsApp group where you can ask questions and get support from fellow students and mentors.',
+    answer: 'You can cover up with the reference material which we will provide, but we highly recommend don\'t miss the live session.',
     category: 'general'
   },
   {
@@ -29,22 +29,17 @@ const faqData = [
   },
   {
     question: 'Can I get a job after this training?',
-    answer: 'Absolutely! Our program has a 95% job placement rate. We provide career guidance, resume building tips, and connect you with our network of hiring partners. Many students land DevOps roles within 3-6 months.',
+    answer: 'Absolutely! Our program has a 95% job placement rate. We provide career guidance, resume building tips, and job assistance will be provided. Many students land DevOps roles within 3-6 months.',
     category: 'career'
   },
   {
     question: 'What is the schedule for the sessions?',
-    answer: 'Sessions are held daily from 11:00 PM to 7:00 PM IST, starting August 20, 2025. Weekend sessions are also available for those who prefer different timings. All sessions are conducted online.',
+    answer: 'Sessions are held daily from 11:00 PM to 7:00 PM IST, starting August 20, 2025. All sessions are conducted online.',
     category: 'schedule'
   },
   {
-    question: 'How many students are in each batch?',
-    answer: 'We maintain small batch sizes of 50-100 students to ensure personalized attention. This allows for better interaction and more focused learning experience.',
-    category: 'general'
-  },
-  {
     question: 'What if I have questions during the course?',
-    answer: 'You\'ll have access to our dedicated WhatsApp support group where you can ask questions 24/7. Our mentors and community members are always ready to help you succeed.',
+    answer: 'You\'ll have access to our dedicated Discord community where you can ask questions 24/7. Our mentors and community members are always ready to help you succeed.',
     category: 'support'
   },
   {
@@ -152,26 +147,6 @@ export const FAQ: React.FC = () => {
                 )}
               </div>
             ))}
-          </div>
-
-          {/* Contact Support */}
-          <div className="mt-12 text-center">
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-800">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Still have questions?
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Our support team is here to help you 24/7
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors duration-200">
-                  <span>💬 WhatsApp Support</span>
-                </button>
-                <button className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200">
-                  <span>📧 Email Support</span>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>

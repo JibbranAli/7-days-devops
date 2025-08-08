@@ -165,7 +165,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ isOpen, onCl
     
     try {
       // Google Apps Script Web App URL - Replace with your actual URL after deployment
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbxZ-vUUgy1Kj6nESYLFhAqh5cXXXtoCT1lIgUb-CU1u9pNhWqDR4YQjJj0MiiFbrgF-/exec';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwez4t6sMLd_JavCJE1fzxuC6ciBkZEikT4-rKaFtQ8HsFE_UM1TtdA3HUAhcc4CvHl/exec';
       
       // Prepare data in the format expected by the Google Apps Script
       const formDataForScript = {
@@ -264,14 +264,23 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ isOpen, onCl
               Registration Successful! 🎉
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
-              Welcome to the DevOps Training Program! We'll send you all the details and access 
-              links to your registered email address within 24 hours.
+              Welcome to the DevOps Training Program! We've sent you all the details and access 
+              links to your registered email address.
             </p>
             <div className="bg-blue-50 dark:bg-blue-900/30 rounded-xl p-4 border border-blue-200 dark:border-blue-800 mb-6">
               <p className="text-blue-700 dark:text-blue-300 font-medium text-sm">
-                📧 Check your email for the welcome package<br />
-                💬 Join our community WhatsApp group<br />
-                📅 Mark your calendar: August 20, 2025
+                📧 <strong>Check your email now!</strong><br />
+                💬 <strong>WhatsApp group link is in your email</strong><br />
+                📅 Mark your calendar: August 20, 2025<br />
+                🎯 Join the WhatsApp group to stay updated
+              </p>
+            </div>
+            <div className="bg-green-50 dark:bg-green-900/30 rounded-xl p-4 border border-green-200 dark:border-green-800 mb-6">
+              <p className="text-green-700 dark:text-green-300 font-medium text-sm">
+                <strong>Next Steps:</strong><br />
+                1. Check your email for the WhatsApp group link<br />
+                2. Join our WhatsApp group for all updates and announcements<br />
+                3. We'll add you to our Discord channel for 24/7 support
               </p>
             </div>
             <button
@@ -719,7 +728,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ isOpen, onCl
           {/* Additional Info */}
           <div className="text-center text-sm text-gray-500 dark:text-gray-400">
             <p>🔒 Your information is secure and will never be shared</p>
-            <p>📧 You'll receive joining details within 24 hours</p>
+            <p>📧 You'll receive WhatsApp group link and Discord invite within 24 hours</p>
           </div>
         </form>
       </div>

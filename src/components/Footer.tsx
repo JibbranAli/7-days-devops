@@ -98,11 +98,11 @@ export const Footer: React.FC = () => {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Mail className="w-5 h-5 text-blue-400" />
-                  <span>contact@vimaldaga-devops.com</span>
+                  <span>support@lwindia.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Phone className="w-5 h-5 text-green-400" />
-                  <span>+91 98765 43210</span>
+                  <span>+91 9772201449</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <MapPin className="w-5 h-5 text-red-400" />
@@ -184,16 +184,6 @@ export const Footer: React.FC = () => {
               <span>Made with</span>
               <Heart className="w-4 h-4 text-red-500" />
               <span>for DevOps enthusiasts in India</span>
-            </div>
-          </div>
-          
-          {/* Additional Links */}
-          <div className="mt-6 text-center">
-            <div className="flex justify-center space-x-6 text-sm text-gray-400">
-              <button className="hover:text-white transition-colors duration-200">Privacy Policy</button>
-              <button className="hover:text-white transition-colors duration-200">Terms of Service</button>
-              <button className="hover:text-white transition-colors duration-200">Refund Policy</button>
-              <button className="hover:text-white transition-colors duration-200">Contact Support</button>
             </div>
           </div>
         </div>

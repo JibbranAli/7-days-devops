@@ -302,8 +302,7 @@ function createEmailTemplate(data) {
           <div class="highlight">
             <h3>What's Next?</h3>
             <ol>
-              <li>Check your email for the welcome package (within 24 hours)</li>
-              <li>Join our WhatsApp community group (link will be sent separately)</li>
+              <li><strong>Join our WhatsApp Group:</strong> All updates, session links, and important announcements will be shared in our WhatsApp community group. You'll receive the group link in a separate email within 24 hours.</li>
               <li>Mark your calendar: August 20, 2025 at 11:00 PM</li>
               <li>Prepare for an intensive hands-on learning experience</li>
             </ol>
@@ -314,7 +313,7 @@ function createEmailTemplate(data) {
             <li>All training materials will be provided free of cost</li>
             <li>Live sessions will be recorded for your reference</li>
             <li>Certificate will be provided upon completion</li>
-            <li>24/7 support through our community channels</li>
+            <li><strong>24/7 Support:</strong> We will add you to our Discord channel where you can ask all your doubts 24/7 and get instant support from our mentors and community</li>
           </ul>
           
           <p>If you have any questions, please don't hesitate to reach out to us.</p>
@@ -363,16 +362,15 @@ YOUR REGISTRATION DETAILS:
 ${data.yearsOfExperience ? `- Experience: ${data.yearsOfExperience} years` : ''}
 
 WHAT'S NEXT?
-1. Check your email for the welcome package (within 24 hours)
-2. Join our WhatsApp community group (link will be sent separately)
-3. Mark your calendar: August 20, 2025 at 11:00 PM
-4. Prepare for an intensive hands-on learning experience
+1. Join our WhatsApp Group: All updates, session links, and important announcements will be shared in our WhatsApp community group. You'll receive the group link in a separate email within 24 hours.
+2. Mark your calendar: August 20, 2025 at 11:00 PM
+3. Prepare for an intensive hands-on learning experience
 
 IMPORTANT NOTES:
 - All training materials will be provided free of cost
 - Live sessions will be recorded for your reference
 - Certificate will be provided upon completion
-- 24/7 support through our community channels
+- 24/7 Support: We will add you to our Discord channel where you can ask all your doubts 24/7 and get instant support from our mentors and community
 
 If you have any questions, please don't hesitate to reach out to us.
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { TrendingUp, DollarSign, Users, Globe, Zap, Target, ArrowUpRight, Shield } from 'lucide-react';
+import { ArrowUpRight, TrendingUp, Users, DollarSign, Clock, Zap, Shield, BarChart3 } from 'lucide-react';
+import { useModal } from '../contexts/ModalContext';
 
 const trendsData = [
   {
@@ -30,7 +31,7 @@ const trendsData = [
     title: 'Global Adoption',
     value: '92%',
     description: 'Companies using DevOps practices',
-    icon: Globe,
+    icon: BarChart3,
     color: 'from-orange-500 to-red-600',
     trend: 'up'
   }
@@ -49,7 +50,7 @@ const opportunitiesData = [
     description: 'DevOps teams are increasingly integrating AI/ML pipelines, requiring specialized skills.',
     impact: 'Medium',
     timeframe: '2024-2027',
-    icon: Target
+    icon: Clock
   },
   {
     title: 'Security Focus',
@@ -63,7 +64,7 @@ const opportunitiesData = [
     description: 'Remote DevOps roles are increasing, offering global opportunities and flexible work arrangements.',
     impact: 'Medium',
     timeframe: '2024-2026',
-    icon: Globe
+    icon: BarChart3
   }
 ];
 
@@ -76,6 +77,7 @@ const salaryData = [
 ];
 
 export const IndustryTrends: React.FC = () => {
+  const { openRegistrationModal } = useModal();
   const [activeTab, setActiveTab] = useState<'trends' | 'opportunities' | 'salaries'>('trends');
 
   return (
@@ -240,7 +242,9 @@ export const IndustryTrends: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-300 mb-6">
               Join thousands of professionals who have transformed their careers with our comprehensive training program.
             </p>
-            <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-cyan-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+            <button 
+              onClick={openRegistrationModal}
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-cyan-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
               <span>Start Learning Now</span>
               <ArrowUpRight className="w-5 h-5 ml-2" />
             </button>

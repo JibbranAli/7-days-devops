@@ -45,12 +45,16 @@ export const Header: React.FC = () => {
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">VD</span>
-            </div>
+          <div className="flex items-center space-x-3">
+            {/* Logo */}
+            <img 
+              src="/images/WHITE LW.png" 
+              alt="LW Logo" 
+              className="h-8 w-auto object-contain"
+            />
+            {/* Text */}
             <span className="font-bold text-xl text-gray-900 dark:text-white">
-              DevOps Training
+              7 Days Free DevOps Training
             </span>
           </div>
 
@@ -75,6 +79,12 @@ export const Header: React.FC = () => {
                 <span className="ml-2">🎁</span>
               </span>
             </button>
+            {/* Second Logo */}
+            <img 
+              src="/images/hash13whitelogo.png" 
+              alt="Hash13 Logo" 
+              className="h-8 w-auto object-contain"
+            />
           </div>
 
           {/* Mobile Menu Button */}
