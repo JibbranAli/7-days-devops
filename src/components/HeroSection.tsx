@@ -68,13 +68,6 @@ export const HeroSection: React.FC = () => {
             </span>
           </h1>
 
-          {/* FREE Badge */}
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mb-8 shadow-2xl animate-bounce">
-            <span className="text-white font-bold text-xl mr-2">🎁</span>
-            <span className="text-white font-bold text-lg">100% FREE TRAINING</span>
-            <span className="text-white font-bold text-xl ml-2">🎁</span>
-          </div>
-
           {/* Subheading */}
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto px-4">
             Learn from{' '}
@@ -84,32 +77,32 @@ export const HeroSection: React.FC = () => {
 
           {/* Animated Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-10 max-w-3xl mx-auto px-4">
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20 text-center h-32 sm:h-36 flex flex-col justify-center">
               <div className="flex items-center justify-center mb-2">
                 <Users className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400 mr-2" />
                 <span className="text-2xl sm:text-3xl font-bold text-white">
                   {isLoading ? '...' : studentCount.toLocaleString()}+
                 </span>
               </div>
-              <p className="text-gray-300 text-xs sm:text-sm">Students Trained</p>
+              <p className="text-gray-300 text-xs sm:text-sm text-center">Students Trained</p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20 text-center h-32 sm:h-36 flex flex-col justify-center">
               <div className="flex items-center justify-center mb-2">
                 <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-orange-400 mr-2" />
                 <span className="text-2xl sm:text-3xl font-bold text-white">Aug 20</span>
               </div>
-              <p className="text-gray-300 text-xs sm:text-sm">2025 Start Date</p>
+              <p className="text-gray-300 text-xs sm:text-sm text-center">2025 Start Date</p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20 sm:col-span-2 md:col-span-1">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20 sm:col-span-2 md:col-span-1 text-center h-32 sm:h-36 flex flex-col justify-center">
               <div className="flex items-center justify-center mb-2">
-                <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-green-400 mr-2" />
-                <span className="text-2xl sm:text-3xl font-bold text-white">
+                <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-green-400 mr-2 flex-shrink-0" />
+                <span className="text-2xl sm:text-3xl font-bold text-white whitespace-nowrap">
                   {isLoading ? '...' : moduleCount} Modules
                 </span>
               </div>
-              <p className="text-gray-300 text-xs sm:text-sm">{isLoading ? '...' : practicalCount}% Practical</p>
+              <p className="text-gray-300 text-xs sm:text-sm text-center">{isLoading ? '...' : practicalCount}% Practical</p>
             </div>
           </div>
         </div>

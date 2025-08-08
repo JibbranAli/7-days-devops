@@ -98,21 +98,23 @@ export const Countdown: React.FC = () => {
 
         {/* Video and Countdown Section */}
         <div className="max-w-7xl mx-auto mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             {/* Video Section - Left Side */}
             <div className="order-2 lg:order-1">
-              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 shadow-2xl">
-                <div className="aspect-[9/14.44] rounded-2xl overflow-hidden bg-gray-800 relative max-w-sm mx-auto">
-                  <video 
-                    className="w-full h-full rounded-2xl"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/IMG_3456.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 shadow-2xl h-full flex flex-col">
+                <div className="flex-1 flex flex-col">
+                  <div className="flex-1 rounded-2xl overflow-hidden bg-gray-800 relative max-w-sm mx-auto">
+                    <video 
+                      className="w-full h-full rounded-2xl object-cover"
+                      controls
+                      preload="metadata"
+                    >
+                      <source src="/videos/IMG_3456.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
                 </div>
-                <div className="mt-4 text-center">
+                <div className="mt-4 text-center flex-shrink-0">
                   <p className="text-gray-300 text-sm">
                     Learn about the comprehensive 7-day DevOps training program
                   </p>
