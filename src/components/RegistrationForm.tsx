@@ -164,25 +164,41 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ isOpen, onCl
     setIsSubmitting(true);
     
     try {
-      // Google Apps Script Web App URL - you'll need to replace this with your actual URL
-      const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+      // Google Apps Script Web App URL - Replace with your actual URL after deployment
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxZ-vUUgy1Kj6nESYLFhAqh5cXXXtoCT1lIgUb-CU1u9pNhWqDR4YQjJj0MiiFbrgF-/exec';
+      
+      // Prepare data in the format expected by the Google Apps Script
+      const formDataForScript = {
+        fullName: formData.fullName,
+        collegeCompany: formData.collegeCompany,
+        contactNumber: formData.contactNumber,
+        emailId: formData.emailId,
+        currentCity: formData.currentCity,
+        howDidYouKnow: formData.sourceOfInformation,
+        reference: formData.reference,
+        studentOrProfessional: formData.profession,
+        yearsOfExperience: formData.yearsOfExperience,
+        currentRole: formData.currentRole,
+        expectations: formData.expectations,
+        additionalInformation: formData.additionalInfo
+      };
+      
+      // Use a simple approach that works with Google Apps Script
+      console.log('Submitting data:', formDataForScript);
       
       const response = await fetch(scriptURL, {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'no-cors', // This is important for Google Apps Script
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-          source: 'Website Registration Form'
-        })
+        body: JSON.stringify(formDataForScript)
       });
 
-      // Since we're using no-cors, we can't check the response status
-      // In a real implementation, you'd handle the response properly
+      console.log('Response received:', response);
       
+      // Since we're using no-cors, we can't check the response status
+      // But we can assume success if no error was thrown
       setIsSubmitted(true);
       setFormData({
         fullName: '',
@@ -200,9 +216,11 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ isOpen, onCl
       });
       setErrors({});
       setTouched({});
+      
     } catch (error) {
       console.error('Submission error:', error);
-      alert('There was an error submitting your registration. Please try again.');
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      alert('There was an error submitting your registration. Please try again. Error: ' + errorMessage);
     } finally {
       setIsSubmitting(false);
     }

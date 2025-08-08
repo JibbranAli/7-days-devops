@@ -29,10 +29,13 @@ export const MentorSection: React.FC = () => {
               <div className="relative mb-8">
                 <div className="w-80 h-80 mx-auto lg:mx-0 bg-gradient-to-r from-orange-500 to-red-600 rounded-full p-1">
                   <div className="w-full h-full bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
-                    {/* Placeholder for mentor image */}
-                    <div className="w-full h-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center">
-                      <div className="text-8xl font-bold text-white">VD</div>
-                    </div>
+                    {/* Mentor image */}
+                    <img 
+                      src="/images/vimalsir-stage.jpg" 
+                      alt="Mr. Vimal Daga - DevOps Guru of India"
+                      className="w-full h-full object-cover object-top rounded-full"
+                      style={{ objectPosition: 'center 20%' }}
+                    />
                   </div>
                 </div>
                 
