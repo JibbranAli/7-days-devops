@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="DevOps Training" />
+    <link rel="apple-touch-icon" href="/icon-192x192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Master DevOps in 7 Days - Free Training by Vimal Daga | DevOps Guru of India</title>
+    <meta name="description" content="Join 10,000+ students in a FREE 7-Day DevOps Training Program led by Mr. Vimal Daga, India's #1 DevOps mentor. Learn Linux, Docker, Shell Scripting & more. Starts Aug 20, 2025." />
+    <meta name="keywords" content="DevOps training, free DevOps course, Vimal Daga, Linux training, Docker tutorial, Shell scripting, DevOps certification, India DevOps mentor, cloud computing, automation" />
+    <meta name="author" content="Vimal Daga" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://devops-training-vimal-daga.com" />
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Master DevOps in 7 Days - Free Training by Vimal Daga" />
+    <meta property="og:description" content="Join 10,000+ students in a FREE 7-Day DevOps Training Program. Learn from India's DevOps Guru." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://devops-training-vimal-daga.com" />
+    <meta property="og:image" content="https://devops-training-vimal-daga.com/og-image.jpg" />
+    <meta property="og:site_name" content="DevOps Training by Vimal Daga" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Master DevOps in 7 Days - Free Training by Vimal Daga" />
+    <meta name="twitter:description" content="Join 10,000+ students in a FREE 7-Day DevOps Training Program." />
+    <meta name="twitter:image" content="https://devops-training-vimal-daga.com/og-image.jpg" />
+    <meta name="twitter:creator" content="@vimaldaga" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "7-Day DevOps Training Program",
+      "startDate": "2025-08-20",
+      "endDate": "2025-08-26",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://devops-training-vimal-daga.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "performer": {
+        "@type": "Person",
+        "name": "Vimal Daga",
+        "jobTitle": "DevOps Guru",
+        "description": "India's #1 DevOps mentor with 15+ years of experience"
+      },
+      "organizer": {
+        "@type": "Person",
+        "name": "Vimal Daga"
+      },
+      "description": "Comprehensive 7-day DevOps training program covering Linux, Docker, Git, Shell Scripting, and more. 100% practical hands-on learning.",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Students and professionals interested in DevOps"
+      }
+    }
+    </script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Performance optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script type="module">
+      if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
